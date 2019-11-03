@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+
+ 	<class name="com.hibernate.namedquery.model.Cart" table="Cart">
+		<id name="Sno" column="Sno">
+			<generator class="increment" />
+		</id>
+		<property name="ItemName" column="ItemName" />
+		<property name="Price" column="Price" />
+		<property name="Restaurant" column="Restaurant" />
+	</class> 
+	   
+ 	<!-- Data retrieval operation -->
+	   
+	    <query name="SelectOperationforCart">
+	        
+	        <![CDATA[from Cart]]>
+	    </query>
+	    
+	    <!-- Data deletion operation -->
+	    
+	    <query name="DeleteOperationforCart">
+	        
+	        <![CDATA[delete from Cart where Sno=?]]>
+	    </query>
+	    <!-- update operation -->
+	  <!--   <query name="UpdateOperationforCart">
+	        
+	        <![CDATA[update Cart as
+cc set cc.price =:newprice where cc.Sno=:CartId]]>
+	    </query>
+ -->	
+ <!-- Select operation using sql named query -->
+ <sql-query name=""></sql-query>
+</hibernate-mapping>
